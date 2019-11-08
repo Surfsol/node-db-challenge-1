@@ -44,9 +44,19 @@ router.post('/resources', (req, res) => {
 
 router.get('/tasks', (req, res) => {
     Projects.getTask()
-    .then(task => {
-        res.status(200).json({task})
-    })
+    .then(tasks => 
+        {
+        res.status(200).json(tasks.map(e=>{
+            let task = e.task
+            let com = e.completed
+            if(com == 0){
+                return ([e.task, false])
+            } else{
+                return ([e.task, true])
+            }
+        }))
+    }
+    )
     .catch(err => {
         res.status(500).json({message: 'Failed to retrieve Resources.'})
     })
