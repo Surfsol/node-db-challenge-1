@@ -1,6 +1,6 @@
 const express = require('express')
 
-//const Projects = require('./projects-model')
+const Projects = require('./projects-model')
 
 const router = express.Router()
 
@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
 })
 
 router.get('/resources', (req, res) => {
-    Projects.getProjects()
+    Projects.getResources()
     .then(reso => {
         res.status(200).json(reso)
     }).catch(err => {
@@ -33,7 +33,7 @@ router.get('/resources', (req, res) => {
 })
 
 router.post('/resources', (req, res) => {
-    Projects.addProjects(req.body)
+    Projects.addResources(req.body)
     .then(reso => {
         res.status(201).json(reso)
     })
