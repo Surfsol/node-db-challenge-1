@@ -44,7 +44,7 @@ none, sql is a relational database
 so they can be uniquely identitfied and cross referenced.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
-fk
+foreign key
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
 More than one item on each table has a relationship with more than one item on the other table.
 ## Minimum Viable Product
